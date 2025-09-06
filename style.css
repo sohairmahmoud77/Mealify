@@ -539,10 +539,6 @@ min-width: 3.125rem;
     border-color: red;
 }
 
-.contact form input:nth-child(1),
-.contact form input:nth-child(2) {
-    width: calc((100% - 15px) /2);
-}
 
 .contact form button {
     margin: auto;
@@ -715,7 +711,7 @@ footer .container .item3 i {
 }
 
 
-/* black */
+/* dark */
 
 body.dark {
     background-color: #121212;
@@ -759,7 +755,7 @@ body.dark header .home-content .container .text h2 {
  body.dark .contact p span {
     color: #8b7807;
 }
-.navbar .logo a span {
+ body.dark .navbar .logo a span {
     color: #8b7807;
 }
 body.dark .contact form button{background-color: #8b7807;}
@@ -791,91 +787,162 @@ body.dark footer .container .item3 i {color: #8b7807;}
 
 
 
-@media screen and (min-width:1400px) {
-  .container {
-    width: 70%;
-  }
-  .gallery .container {
-    height: 80rem;
-  }
-}
+/* media query*/
 
-@media screen and (max-width:1399px) and (min-width:1200px) {
-  .container {
-    width: 80%;
-  }
-  .gallery .container {
-    height: 1000px;
-  }
-}
+@media (max-width: 576px) {
 
-@media screen and (max-width:1199px) and (min-width:992px) {
-  .container {
-    width: 85%;
-  }
-  .gallery .container {
-    height: auto;
-  }
-  .chefs .chef {
-    width: calc((100% - 30px) / 2);
-  }
-}
-
-@media screen and (max-width:991px) and (min-width:768px) {
-  .container {
-    width: 90%;
-  }
-  header .home-content .container {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .chefs .chef {
-    width: 48%;
-  }
-  .gallery .container .img {
-    width: 48%;
-  }
-}
-
-@media screen and (max-width:767px) {
   .container {
     width: 95%;
   }
+
+  /* Navbar */
+  .navbar .container {
+    flex-direction: row;
+  }
+  .navbar nav ul.active {
+  display: flex ;
+}
+
+
+  .navbar nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  }
+
+  .navbar .menu-icon {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  /* Home Section */
   header .home-content .container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
+    justify-content: center;
   }
-  header .home-content .container .text h2 {
-    font-size: 36px;
+
+  header .home-content .container .text {
+    width: 100%;
   }
-  header .home-content .container .text p {
-    font-size: 18px;
+
+  header .home-content .container .img {
+    width: 90%;
+    margin-top: 30px;
   }
-  .chefs .chef,
-  .gallery .container .img,
+
+  .button-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  
+  .chefs .container {
+    flex-direction: column;
+  }
+
+  .chefs .chef {
+    width: 100%;
+  }
+
+  
+  .gallery .container {
+    height: auto;
+  }
+
+  .gallery .container .img {
+    width: 100%;
+  }
+
+  .contact .container .contacts {
+    flex-direction: column;
+  }
+
   .contact .container .contacts .contact-item {
     width: 100%;
   }
+
+  
+
+  
   footer .container {
     flex-direction: column;
     text-align: center;
   }
-}
 
-@media screen and (max-width:480px) {
-  header .home-content .container .text h2 {
-    font-size: 28px;
+  footer .container .item2 ul li {
+    width: 100%;
   }
-  .chefs p,
-  .gallery p,
-  .contact p {
-    font-size: 24px;
-  }
-  header .home-content .container .text .button-links {
+
+  footer .container .item2 form {
     flex-direction: column;
   }
+
+  footer .container .item2 form button {
+    width: 100%;
+  }
 }
 
 
+@media (min-width: 577px) and (max-width: 991px) {
 
+  .container {
+    width: 90%;
+  }
 
+  header .home-content .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header .home-content .container .text {
+    width: 100%;
+  }
+
+  header .home-content .container .img {
+    width: 60%;
+    margin: 20px auto;
+  }
+
+  .chefs .container {
+    justify-content: center;
+  }
+
+  .chefs .chef {
+    width: calc((100% - 40px) /2);
+  }
+
+  .gallery .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .gallery .container .img {
+    width: calc((100% - 30px) /2);
+  }
+
+  .contact .container .contacts .contact-item {
+    width: 100%;
+  }
+
+  footer .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  footer .container .item2 ul li {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 80%;}}
